@@ -1,0 +1,14 @@
+:root{
+
+    --morado:#7D2181;
+}
+
+body{
+    background-color: var(--morado);
+}
+
+img{
+    
+    height: 300px;
+    width: 300px;
+}
