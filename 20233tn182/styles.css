@@ -1,0 +1,56 @@
+/* Establece estilos generales del cuerpo de la página */
+body {
+  font-family: 'Arial', sans-serif; /* Usa Arial o la fuente sans-serif por defecto del sistema */
+  line-height: 1.6; /* Espaciado entre líneas para mejorar la legibilidad */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Color de fondo suave */
+  color: #333; /* Color de texto oscuro para contrastar con el fondo */
+}
+
+/* Estilos para la cabecera */
+header {
+  background-color: #ffffff; /* Fondo blanco para el encabezado */
+  padding: 20px 10%; /* Espaciado interno alrededor del contenido del encabezado */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave para darle profundidad */
+  margin-bottom: 20px; /* Separación entre el header y el contenido */
+}
+
+/* Estilos para las secciones de la página */
+section {
+  margin: 20px 10%; /* Margen para dar espacio alrededor de las secciones */
+  background: #ffffff; /* Fondo blanco para las secciones */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Estilo para las imágenes */
+img {
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen al escalar */
+  display: block; /* Asegura que no haya espacio extra debajo de la imagen */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+/* Estilos para los títulos de las secciones */
+h1, h2, h3 {
+  color: #2c3e50; /* Color oscuro para los títulos */
+}
+
+/* Estilo para el footer */
+footer {
+  text-align: center; /* Centra el texto del pie de página */
+  padding: 10px 0; /* Espaciado vertical dentro del pie */
+  background-color: #2c3e50; /* Color de fondo oscuro para el pie de página */
+  color: #ffffff; /* Texto blanco para el pie de página */
+  position: fixed; /* Fija el pie de página en la parte inferior */
+  bottom: 0;
+  width: 100%;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  header, section {
+      padding: 20px; /* Más pequeño padding en dispositivos móviles */
+  }
+}
