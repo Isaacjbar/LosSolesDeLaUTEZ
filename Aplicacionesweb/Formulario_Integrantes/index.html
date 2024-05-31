@@ -1,1 +1,103 @@
-  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .form-container {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .form-container input {
+            margin-bottom: 10px;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .form-container button {
+            margin-right: 10px;
+            padding: 10px 20px;
+        }
+        .table-container {
+            flex: 2;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Ingrese su nombre porfavor">
+            <label for="matricula">Matrícula:</label>
+            <input type="text" id="matricula" placeholder="Ingrese su matrícula porfavor">
+            <button id="nuevoRegistro">Nuevo registro</button>
+            <button id="registrar">Registrar</button>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Integrante</th>
+                        <th>Matrícula</th>
+                    </tr>
+                </thead>
+                <tbody id="integrantes">
+                    <!-- Inicialmente vacío -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('nuevoRegistro').addEventListener('click', function() {
+            const nombre = document.getElementById('nombre').value;
+            const matricula = document.getElementById('matricula').value;
+            const table = document.getElementById('integrantes');
+            const newRow = table.insertRow();
+            const nameCell = newRow.insertCell(0);
+            const matriculaCell = newRow.insertCell(1);
+            nameCell.textContent = nombre;
+            matriculaCell.textContent = matricula;
+            document.getElementById('nombre').value = '';
+            document.getElementById('matricula').value = '';
+        });
+
+        document.getElementById('registrar').addEventListener('click', function() {
+            const nombre = document.getElementById('nombre').value;
+            const matricula = document.getElementById('matricula').value;
+            const table = document.getElementById('integrantes');
+            table.innerHTML = ''; // Clear the table body
+
+            if (nombre || matricula) {
+                const newRow = table.insertRow(); // Add the new record
+                const nameCell = newRow.insertCell(0);
+                const matriculaCell = newRow.insertCell(1);
+                nameCell.textContent = nombre;
+                matriculaCell.textContent = matricula;
+                document.getElementById('nombre').value = '';
+                document.getElementById('matricula').value = '';
+            }
+        });
+    </script>
+</body>
+</html>
