@@ -47,9 +47,9 @@
     <div class="container">
         <div class="form-container">
             <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" placeholder="Ingrese su nombre porfavor">
+            <input type="text" id="nombre" placeholder="Ingrese su nombre por favor">
             <label for="matricula">Matrícula:</label>
-            <input type="text" id="matricula" placeholder="Ingrese su matrícula porfavor">
+            <input type="text" id="matricula" placeholder="Ingrese su matrícula por favor">
             <button id="nuevoRegistro">Nuevo registro</button>
             <button id="registrar">Registrar</button>
         </div>
@@ -69,6 +69,20 @@
     </div>
 
     <script>
+        function getParameter(key) {
+            const address = window.location.search;
+            const parameterList = new URLSearchParams(address);
+            return parameterList.get(key);
+        }
+
+        // Establecer los valores iniciales para los campos de entrada usando parámetros de URL
+        window.onload = function() {
+            const nombre = getParameter('nombre');
+            const matricula = getParameter('matricula');
+            if (nombre) document.getElementById('nombre').value = nombre;
+            if (matricula) document.getElementById('matricula').value = matricula;
+        };
+
         document.getElementById('nuevoRegistro').addEventListener('click', function() {
             const nombre = document.getElementById('nombre').value;
             const matricula = document.getElementById('matricula').value;
