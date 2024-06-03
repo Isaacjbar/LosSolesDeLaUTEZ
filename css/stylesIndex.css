@@ -1,0 +1,90 @@
+body{
+    padding-top: 40px;
+}
+/* ESTILOS DEL INDEX */
+.card {
+    margin: 1em .5em;
+    transition: all 300ms;
+    cursor: default;
+}
+.card:hover{
+    transform: scale(1.03);
+}
+
+.img_d_card{
+    object-fit: contain;
+    height: 200px;
+}
+
+#navbar1{
+    top: 0;
+    position: fixed;
+    width: 100%;
+    opacity: .96;
+    z-index: 1000;
+}
+#sesionUsuario{
+    width: 180px;
+    margin: auto 0;
+}
+.sesionUsuario_container{
+    padding: 8px;
+    border-radius: 10px;
+    transition: all 300ms;
+}
+.sesionUsuario_container:hover{
+    transform: scale(1.05);
+    color: #0d6efd !important;
+    background-color: #0d6efd;
+}
+
+.most-recent{
+    width: 80%;
+    margin: 20px auto;
+}
+#most-recent-card{
+    width: 80%;
+    padding: 15px;
+}
+
+#most-recent-card small{
+    padding: 10px;
+    margin: 10px;
+}
+
+@media screen and (max-width: 928px) {
+    #most-recent-card{
+        flex-direction: column-reverse !important;
+    }
+    #most-recent-card small{
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }   
+    .card_title{
+        text-align: center !important;
+    }
+    .card-text{
+        text-align: justify;
+    }
+    .btn-group{
+        margin: 15px auto;
+    }
+
+}
+
+#crearHistoriaBtn{
+    margin: 1em auto;
+}
+
+.divisor1{
+    height: 2px;
+    width: 80%;
+    margin: 0 auto;
+    background-color: black !important;
+}
+.card-body{
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+}

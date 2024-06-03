@@ -1,8 +1,0 @@
-.card {
-    margin: 1em .5em;
-    transition: all 300ms;
-    cursor: default;
-}
-.card:hover{
-    transform: scale(1.03);
-}
