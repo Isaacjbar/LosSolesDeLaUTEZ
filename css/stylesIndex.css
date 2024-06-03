@@ -71,7 +71,29 @@ body{
     .btn-group{
         margin: 15px auto;
     }
+    .app-name-text{
+        font-size: 17px;
+        margin-left: 10px;
+    }
+}
 
+@media screen and (max-width: 500px){
+    .most-recent{
+        width: 100%;
+    }   
+    .app-name-text{
+        font-size: 15px;
+        margin-left: 10px;
+    }
+    .sesionUsuario_container,.sesionUsuario{
+        width: 60px;
+        display: flex;
+        justify-content: center;
+
+    }
+    .textUser{
+        display: none;
+    }
 }
 
 #crearHistoriaBtn{
