@@ -1,115 +1,98 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px;
-        }
-        .form-container {
-            flex: 1;
-            margin-right: 20px;
-        }
-        .form-container input {
-            margin-bottom: 10px;
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .form-container button {
-            margin-right: 10px;
-            padding: 10px 20px;
-        }
-        .table-container {
-            flex: 2;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-    </style>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='bootstrap.css'>
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" placeholder="Ingrese su nombre por favor">
-            <label for="matricula">Matrícula:</label>
-            <input type="text" id="matricula" placeholder="Ingrese su matrícula por favor">
-            <button id="nuevoRegistro">Nuevo registro</button>
-            <button id="registrar">Registrar</button>
-        </div>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Integrante</th>
-                        <th>Matrícula</th>
-                    </tr>
-                </thead>
-                <tbody id="integrantes">
-                    <!-- Inicialmente vacío -->
-                </tbody>
-            </table>
+    <div class="container"> 
+        <div class="row">
+            <div class="col"><!--Tendre el form-->
+                <form id="formulario">
+                    <div class="mb-3">
+                      <label for="nombre" class="form-label">Nombre: </label>
+                      <input name="nombres" type="text" class="form-control" id="nombres" aria-describedby="ayudaNombre">
+                      <div id="ayudaNombre" class="form-text">Ingrese su nombre porfavor.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="matri" class="form-label">Matrícula: </label>
+                      <input name="matri" type="text" class="form-control" id="matricula">
+                    </div>
+                    <button id="nuevo" type="button" class="btn btn-success">Nuevo registro</button>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                  </form>
+            </div>
+            <div class="col"><!--Tendre la tabla-->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Integrante</th>
+                            <th>Matrícula</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contenido">
+                        <!-- Llenar con JS -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-
+    <script src='js/bootstrap.js'></script>
     <script>
-        function getParameter(key) {
-            const address = window.location.search;
-            const parameterList = new URLSearchParams(address);
-            return parameterList.get(key);
+        let i = 2;
+        let nuevo = document.getElementById("nuevo");
+        nuevo.addEventListener("click", () => {
+            //crear nuevos elementos para el form
+            let div = document.createElement("div");
+            div.setAttribute("class", "mb-3");
+            let label_nombre = document.createElement("label");
+            let input_nombre = document.createElement("input");
+            label_nombre.setAttribute("for", "nombre" + i);
+            label_nombre.setAttribute("class", "form-label");
+            label_nombre.innerText = "Nombre " + i;
+            input_nombre.setAttribute("name", "nombre" + i);
+            input_nombre.setAttribute("type", "text");
+            input_nombre.setAttribute("class", "form-control");
+
+            div.appendChild(label_nombre);
+            div.appendChild(input_nombre);
+            document.getElementById("formulario").appendChild(div);
+
+            i++;
+        });
+    </script>
+    <script>
+        //Script para llenar la tabla de manera dinamica
+        const getParameter = (key) => {
+            const address = window.location.search; // url de la ventana actual
+            const parameterList = new URLSearchParams(address); // Objeto de tipo URLSearchParams
+            return parameterList.get(key); // Regresa el valor del parámetro “key”
         }
 
-        // Establecer los valores iniciales para los campos de entrada usando parámetros de URL
-        window.onload = function() {
-            const nombre = getParameter('nombre');
-            const matricula = getParameter('matricula');
-            if (nombre) document.getElementById('nombre').value = nombre;
-            if (matricula) document.getElementById('matricula').value = matricula;
-        };
+        const nombre = getParameter("nombre");
+        const matricula = getParameter("matri");
 
-        document.getElementById('nuevoRegistro').addEventListener('click', function() {
-            const nombre = document.getElementById('nombre').value;
-            const matricula = document.getElementById('matricula').value;
-            const table = document.getElementById('integrantes');
-            const newRow = table.insertRow();
-            const nameCell = newRow.insertCell(0);
-            const matriculaCell = newRow.insertCell(1);
-            nameCell.textContent = nombre;
-            matriculaCell.textContent = matricula;
-            document.getElementById('nombre').value = '';
-            document.getElementById('matricula').value = '';
-        });
+        const address = window.location.search;
+        const parameterList = new URLSearchParams(address);
 
-        document.getElementById('registrar').addEventListener('click', function() {
-            const nombre = document.getElementById('nombre').value;
-            const matricula = document.getElementById('matricula').value;
-            const table = document.getElementById('integrantes');
-            table.innerHTML = ''; // Clear the table body
+        //Pintar la información en la tabla
+        function pintar(nombre, matricula) {
+            const tbody = document.getElementById("contenido");
+            const row = document.createElement("tr");
+            const celda1 = document.createElement("td");
+            const celda2 = document.createElement("td");
+            celda1.innerText = nombre;
+            celda2.innerText = matricula;
+            row.appendChild(celda1);
+            row.appendChild(celda2);
+            tbody.appendChild(row);
+        }
 
-            if (nombre || matricula) {
-                const newRow = table.insertRow(); // Add the new record
-                const nameCell = newRow.insertCell(0);
-                const matriculaCell = newRow.insertCell(1);
-                nameCell.textContent = nombre;
-                matriculaCell.textContent = matricula;
-                document.getElementById('nombre').value = '';
-                document.getElementById('matricula').value = '';
+        //lista se pueden iterar en un foreach
+        parameterList.forEach((value, key) => {
+            if (key.startsWith('nombre')) {
+                pintar(value, "vacio");
             }
         });
     </script>
