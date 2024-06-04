@@ -5,8 +5,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>formulario SolesDeLaUTEZ</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='..\..\bootstrap-5.2.3-dist'>
-    
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
 </head>
 <body>
     <div class="container">
@@ -16,7 +15,7 @@
                     <div class="mb-3">
                       <label for="nombre" class="form-label">Nombre: </label>
                       <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="ayudaNombre">
-                      <div id="ayudaNombre" class="form-text">Ingrese su nombre porfavor.</div>
+                      <div id="ayudaNombre" class="form-text">Ingrese su nombre por favor.</div>
                     </div>
                     <div class="mb-3">
                       <label for="matri" class="form-label">Matrícula: </label>
@@ -41,72 +40,79 @@
             </div>
         </div>
     </div>
-    <script src="bootstrap.css"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script>
         let i = 2;
         let nuevo = document.getElementById("nuevo");
         nuevo.addEventListener("click", () => {
-            //crear nuevos elementos para el form
+            // Crear nuevos elementos para el form
             let div = document.createElement("div");
-            div.setAttribute("class","mb-3");
+            div.setAttribute("class", "mb-3");
+            
             let label_nombre = document.createElement("label");
+            label_nombre.setAttribute("for", "nombre" + i);
+            label_nombre.setAttribute("class", "form-label");
+            label_nombre.innerText = "Nombre " + i;
+            
             let input_nombre = document.createElement("input");
-            label_nombre.setAttribute("for","nombre"+i);
-            label_nombre.setAttribute("class","form-label");
-            label_nombre.innerText = "nombre"+i;
-            input_nombre.setAttribute("name","nombre"+i);
-            input_nombre.setAttribute("type","text");
-            input_nombre.setAttribute("class","form-control");
+            input_nombre.setAttribute("name", "nombre" + i);
+            input_nombre.setAttribute("type", "text");
+            input_nombre.setAttribute("class", "form-control");
 
             div.appendChild(label_nombre);
-            //Para que no se muestre el input
-            //div.appendChild(input_nombre);
-            document.getElementById("formulario").appendChild(div);
+            div.appendChild(input_nombre);
 
+            let label_matri = document.createElement("label");
+            label_matri.setAttribute("for", "matri" + i);
+            label_matri.setAttribute("class", "form-label");
+            label_matri.innerText = "Matrícula " + i;
+
+            let input_matri = document.createElement("input");
+            input_matri.setAttribute("name", "matri" + i);
+            input_matri.setAttribute("type", "text");
+            input_matri.setAttribute("class", "form-control");
+
+            div.appendChild(label_matri);
+            div.appendChild(input_matri);
+
+            document.getElementById("formulario").appendChild(div);
             i++;
         });
     </script>
     <script>
-        //Script para llenar la tabla de manera dinamica
+        //Script para llenar la tabla de manera dinámica
         getParameter = (key) => {
-            address = window.location.search;
-            parameterList = new URLSearchParams(address);
+            let address = window.location.search;
+            let parameterList = new URLSearchParams(address);
             return parameterList.get(key);
         }
 
         let nombre = getParameter("nombre");
-        //Anteriormente decía matricula, pero el id y name es matri
         let matricula = getParameter("matri");
-        address = window.location.search;
-        parameterList = new URLSearchParams(address);
 
-        //Pintar la información en la tabla
+        // Pintar la información en la tabla
         function pintar(nombre, matri){
             let tbody = document.getElementById("contenido");
             let row = document.createElement("tr");
             let celda1 = document.createElement("td");
             let celda2 = document.createElement("td");
             celda1.innerText = nombre;
-            //Anteriormente decía matricula, pero el id y name es matri
             celda2.innerText = matri;
             row.appendChild(celda1);
             row.appendChild(celda2);
             tbody.appendChild(row);
         }
 
-        const nombres = parameterList.getAll("nombre");
-        const matriculas = parameterList.getAll("matri");
-
-        nombres.forEach((nombre, index) => {
-            const matri = matriculas[index];
-            pintar(nombre, matri);
+        let parameterList = new URLSearchParams(window.location.search);
+        parameterList.forEach((value, key) => {
+            if (key.startsWith('nombre')) {
+                let matriKey = key.replace('nombre', 'matri');
+                let matriValue = parameterList.get(matriKey);
+                pintar(value, matriValue);
+            }
         });
-        /*  Anterior
-            //lista se pueden iterar en un foreach
-            parameterList.forEach(parametro => {
-                pintar(parametro, "vacio")
-            });
-        */
     </script>
-</body>
+</body> 
 </html>
