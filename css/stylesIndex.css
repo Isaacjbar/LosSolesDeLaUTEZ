@@ -1,3 +1,12 @@
+
+:root{
+    --blue1: #002b55;
+    --blue2: #174c82;
+    --blue3: #3182d4;
+    --blue4: #5084b8;
+    --green1: #078d73;
+}
+
 body{
     padding-top: 40px;
 }
@@ -6,7 +15,20 @@ body{
     margin: 1em .5em;
     transition: all 300ms;
     cursor: default;
+    /* box-shadow: 4px 4px var(--green1) !important; */
+    /* border: 2px solid var(--blue2);
+  box-shadow: 4px 4px var(--blue2) !important;
+  border-radius: 5px; */
+  box-shadow: 13px 11px 9px -11px rgba(0,0,0,0.35) !important;
+  /* box-shadow: 13px 11px 9px -11px var(--green1) !important; */
+  -webkit-box-shadow: 13px 11px 9px -11px rgba(0,0,0,0.75);
+  -moz-box-shadow: 13px 11px 9px -11px rgba(0,0,0,0.75);
 }
+
+h4{
+    color: var(--blue1);
+  }
+
 .card:hover{
     transform: scale(1.03);
 }
@@ -22,6 +44,15 @@ body{
     width: 100%;
     opacity: .96;
     z-index: 1000;
+    /* background-color: var(--blue1) !important; */
+    /* background: rgb(2,0,36); */
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, 
+    rgba(0,43,85,1) 28%, rgba(0,212,255,1) 100%); */
+    /* background: rgb(2,0,36); */
+
+    /* background: rgb(15,49,73);
+    background: linear-gradient(90deg, rgba(15,49,73,1) 0%, rgba(7,141,115,1) 38%, rgba(0,212,255,1) 100%); */
+    background-image: linear-gradient(to left, #078d73, #008083, #00708d, #005f8d, #174c82);
 }
 #sesionUsuario{
     width: 180px;
@@ -34,8 +65,8 @@ body{
 }
 .sesionUsuario_container:hover{
     transform: scale(1.05);
-    color: #0d6efd !important;
-    background-color: #0d6efd;
+    background-color: var(--blue2);
+    opacity: 1;
 }
 
 .most-recent{
@@ -98,15 +129,64 @@ body{
 
 #crearHistoriaBtn{
     margin: 1em auto;
+    background-color: #078d73 !important;
+    transition: all 300ms;
+}
+
+#crearHistoriaBtn:hover{
+    /* background-color: #0dcea8 !important; */
+    background-image: linear-gradient(to right, #078d73, #008083, #00708d, #005f8d, #174c82);
+    transform: scale(1.05);
 }
 
 .divisor1{
-    height: 2px;
+    height: 4px;
+    border: none;
     width: 80%;
     margin: 0 auto;
-    background-color: black !important;
+    background-color: var(--green1) !important;
 }
+
+hr{
+    height: 2px;
+    border: none;
+    width: 100%;
+    /* margin: 0 auto; */
+    background-color: var(--blue4) !important;
+
+}
+
 .card-body{
     border-bottom-right-radius: inherit;
     border-bottom-left-radius: inherit;
+}
+
+footer{
+    /* background-color: #002b55; */
+    background: rgb(2,0,36);
+    /* Opcion1 */
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, 
+    rgba(0,43,85,1) 28%, rgba(0,212,255,1) 100%);
+    */
+    color: white; 
+    background: rgb(15,49,73);
+    background: linear-gradient(90deg, rgba(15,49,73,1) 0%, rgba(7,141,115,1) 38%, rgba(0,212,255,1) 100%);
+    background-image: linear-gradient(to right, #078d73, #008083, #00708d, #005f8d, #174c82);
+}
+
+.ultima-mod{
+    background-color: var(--blue1);
+    opacity: .8;
+    color: white;
+    padding: 4px;
+}
+
+.btn-publicar{
+    transform: all 300ms;
+}
+.btn-publicar:hover{
+    background-color: var(--green1);
+}
+.btn-editar:hover{
+    background-color: var(--blue3);
 }
