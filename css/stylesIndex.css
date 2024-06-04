@@ -1,15 +1,4 @@
 
-:root{
-    --blue1: #002b55;
-    --blue2: #174c82;
-    --blue3: #3182d4;
-    --blue4: #5084b8;
-    --green1: #078d73;
-}
-
-body{
-    padding-top: 40px;
-}
 /* ESTILOS DEL INDEX */
 .card {
     margin: 1em .5em;
@@ -38,36 +27,7 @@ h4{
     height: 200px;
 }
 
-#navbar1{
-    top: 0;
-    position: fixed;
-    width: 100%;
-    opacity: .96;
-    z-index: 1000;
-    /* background-color: var(--blue1) !important; */
-    /* background: rgb(2,0,36); */
-    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, 
-    rgba(0,43,85,1) 28%, rgba(0,212,255,1) 100%); */
-    /* background: rgb(2,0,36); */
 
-    /* background: rgb(15,49,73);
-    background: linear-gradient(90deg, rgba(15,49,73,1) 0%, rgba(7,141,115,1) 38%, rgba(0,212,255,1) 100%); */
-    background-image: linear-gradient(to left, #078d73, #008083, #00708d, #005f8d, #174c82);
-}
-#sesionUsuario{
-    width: 180px;
-    margin: auto 0;
-}
-.sesionUsuario_container{
-    padding: 8px;
-    border-radius: 10px;
-    transition: all 300ms;
-}
-.sesionUsuario_container:hover{
-    transform: scale(1.05);
-    background-color: var(--blue1);
-    opacity: 1;
-}
 
 .most-recent{
     width: 80%;
@@ -147,14 +107,7 @@ h4{
     background-color: var(--green1) !important;
 }
 
-hr{
-    height: 2px;
-    border: none;
-    width: 100%;
-    /* margin: 0 auto; */
-    background-color: var(--blue4) !important;
 
-}
 
 .card-body{
     border-bottom-right-radius: inherit;
@@ -162,12 +115,7 @@ hr{
 }
 
 footer{
-    /* background-color: #002b55; */
     background: rgb(2,0,36);
-    /* Opcion1 */
-    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, 
-    rgba(0,43,85,1) 28%, rgba(0,212,255,1) 100%);
-    */
     color: white; 
     background: rgb(15,49,73);
     background: linear-gradient(90deg, rgba(15,49,73,1) 0%, rgba(7,141,115,1) 38%, rgba(0,212,255,1) 100%);
@@ -189,17 +137,4 @@ footer{
 }
 .btn-editar:hover{
     background-color: var(--blue3);
-}
-#logoPrincipal:hover{
-    transition: all 300ms;
-}
-
-    #logoPrincipal:hover{
-    transform: scale(1.08);
-}
-#logoPrincipal svg{
-    transition: all 500ms;
-}
-    #logoPrincipal:hover  > svg{
-    transform: rotate(360deg);
 }

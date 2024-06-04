@@ -1,0 +1,16 @@
+
+
+#buscador{
+    width: 80%;
+}
+
+#buscador-input {
+    background-color: red !important;
+    height: 20px !important;
+}
+
+.usuarioCard{
+    width: 100%;
+    height: 40px;
+    background-color: lightblue;
+}
