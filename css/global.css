@@ -1,77 +1,125 @@
-body{
-    padding-top: 80px;
+body {
+  padding-top: 80px;
 }
 
-:root{
-    --blue1: #002b55;
-    --blue2: #174c82;
-    --blue3: #3182d4;
-    --blue4: #5084b8;
-    --green1: #078d73;
+:root {
+  --blue1: #002b55;
+  --blue2: #174c82;
+  --blue3: #3182d4;
+  --blue4: #5084b8;
+  --green1: #078d73;
 }
 
-#navbar1{
-    top: 0;
-    position: fixed;
-    width: 100%;
-    opacity: .96;
-    z-index: 1000;
-    background-image: linear-gradient(to left, #078d73, #008083, #00708d, #005f8d, #174c82);
-}
-#sesionUsuario{
-    width: 180px;
-    margin: auto 0;
-}
-.sesionUsuario_container{
-    padding: 8px;
-    border-radius: 10px;
-    transition: all 300ms;
-}
-.sesionUsuario_container:hover{
-    transform: scale(1.05);
-    background-color: var(--blue1);
-    opacity: 1;
+.hoverscale {
+  transition: all 310ms;
 }
 
-#logoPrincipal:hover{
-    transition: all 300ms;
+.hoverscale:hover {
+  transform: scale(1.02);
 }
 
-    #logoPrincipal:hover{
-    transform: scale(1.08);
-}
-#logoPrincipal svg{
-    transition: all 500ms;
-}
-    #logoPrincipal:hover  > svg{
-    transform: rotate(360deg);
+.titulo1 {
+  width: 80%;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 30px;
 }
 
-
-#crearHistoriaBtn, .btn-positive{
-    /* margin: 1em auto; */
-    background-color: #078d73 !important;
-    border: none;
-    color: white;
-    transition: all 300ms;
+#navbar1 {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  opacity: 0.96;
+  z-index: 1000;
+  background-image: linear-gradient(
+    to left,
+    #078d73,
+    #008083,
+    #00708d,
+    #005f8d,
+    #174c82
+  );
+}
+#sesionUsuario {
+  width: auto;
+  margin: auto 0;
+}
+.sesionUsuario_container {
+  padding: 8px;
+  border-radius: 10px;
+  transition: all 300ms;
+  margin-right: 10px;
+}
+.sesionUsuario_container:hover {
+  transform: scale(1.05);
+  background-color: var(--blue1);
+  opacity: 1;
 }
 
-#crearHistoriaBtn:hover, .btn-positive:hover{
-    background-image: linear-gradient(to right, #078d73, #008083, #00708d, #005f8d, #174c82);
-    transform: scale(1.05);
+#logoPrincipal:hover {
+  transition: all 300ms;
 }
 
- footer{
-    background: rgb(2,0,36);
-    color: white; 
-    background: rgb(15,49,73);
-    background: linear-gradient(90deg, rgba(15,49,73,1) 0%, rgba(7,141,115,1) 38%, rgba(0,212,255,1) 100%);
-    background-image: linear-gradient(to right, #078d73, #008083, #00708d, #005f8d, #174c82);
+#logoPrincipal:hover {
+  transform: scale(1.08);
+}
+#logoPrincipal svg {
+  transition: all 500ms;
+}
+#logoPrincipal:hover > svg {
+  transform: rotate(360deg);
 }
 
-hr{
-    height: 2px;
-    border: none;
-    width: 100%;
-    background-color: var(--blue4) !important;
+#crearHistoriaBtn,
+.btn-positive {
+  /* margin: 1em auto; */
+  background-color: #078d73 !important;
+  border: none;
+  color: white;
+  transition: all 300ms;
+}
+
+#crearHistoriaBtn:hover,
+.btn-positive:hover {
+  background-image: linear-gradient(
+    to right,
+    #078d73,
+    #008083,
+    #00708d,
+    #005f8d,
+    #174c82
+  );
+  color: white;
+  transform: scale(1.05);
+}
+
+footer {
+  background: rgb(2, 0, 36);
+  color: white;
+  background: rgb(15, 49, 73);
+  background: linear-gradient(
+    90deg,
+    rgba(15, 49, 73, 1) 0%,
+    rgba(7, 141, 115, 1) 38%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-image: linear-gradient(
+    to right,
+    #078d73,
+    #008083,
+    #00708d,
+    #005f8d,
+    #174c82
+  );
+  width: 100%;
+  margin-top: 40px !important;
+  position: static;
+  bottom: 0%;
+}
+
+hr {
+  height: 2px;
+  border: none;
+  width: 100%;
+  background-color: var(--blue4) !important;
 }
