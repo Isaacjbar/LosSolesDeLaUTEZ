@@ -10,17 +10,21 @@ const getParameter = (key)=>{
     return parameterList.get(key);
 };
 
+let address = w.location.search;
+let parameterList = new URLSearchParams(address);
+
 let nombre = getParameter("nombreUsuario"),
 apellidos = getParameter("apellidosUsuaro"),
 correo = getParameter("correoUsuario"),
 contra = getParameter("contraUsuario"),
 contraRepetida = getParameter("contraRepetida");
 
-const $conenedorCards = d.getElementById("cardsUserContainer");
+const $contenedorCards = d.getElementById("cardsUserContainer");
 
 
 
-const $newCard = d.createElement("div");
+if(parameterList.size != 0){
+  const $newCard = d.createElement("div");
 $newCard.setAttribute("class","usuarioCard row container my-4 mx-auto hoverscale");
 $newCard.innerHTML = `
     <div class="infoUsuario col-8 p-2">
@@ -36,7 +40,10 @@ $newCard.innerHTML = `
         <button class="btn btn-danger mx-1 eliminarUsuario">Eliminar</button>
       </div>
 `;
-if($conenedorCards) $conenedorCards.appendChild($newCard);
+
+if($contenedorCards) $contenedorCards.appendChild($newCard);
+}
+
 
 
 // Se probó eliminar usuario pero aún le falta...
