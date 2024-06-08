@@ -31,7 +31,6 @@ $newCard.innerHTML = `
         <h6>${nombre} ${apellidos}</h6>
         <ul>
           <li><strong>Correo:</strong>${correo}</li>
-          <li><strong>Telefono:</strong> 7778242913</li>
         </ul>
       </div>
       <div class="d-flex justify-content-center 
