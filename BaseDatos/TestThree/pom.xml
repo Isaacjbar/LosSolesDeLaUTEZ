@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>jbar</groupId>
-    <artifactId>PR_ID3</artifactId>
+    <artifactId>TestThree</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>PR_ID3</name>
+    <name>TestThree</name>
     <packaging>war</packaging>
 
     <properties>
