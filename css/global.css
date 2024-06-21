@@ -3,6 +3,26 @@ body {
   padding-top: 60px;
 }
 
+:root {
+  --color-text-dark: #1c1a42;
+  --color-brand-dark: #2b298a;
+  --color-brand-standard: #5a4cdb;
+  --color-brand-light: #7a6ee5;
+  --color-brand-background: #d7d3fc;
+  --color-accent-1-dark: #9f3bd4;
+  --color-accent-1-standard: #a74ad9;
+  --color-accent-1-light: #c874d9;
+  --color-accent-1-background: #f8cdf6;
+  --color-accent-2-dark: #2574de;
+  --color-accent-2-standard: #468be8;
+  --color-accent-2-light: #64a5f5;
+  --color-accent-2-background: #cde1f8;
+  --color-background-off-white: #fbfbfc;
+  --color-social-messenger: #0086ff;
+  --color-social-facebook: #1977f2;
+  --color-social-twitter: #1da1f2;
+  --color-social-linkedin: #0077b5;
+}
 /* Variables */
 :root {
   --blue1: #002b55;

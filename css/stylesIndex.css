@@ -9,6 +9,7 @@
     -webkit-box-shadow: 13px 11px 9px -11px rgba(0,0,0,0.75);
     -moz-box-shadow: 13px 11px 9px -11px rgba(0,0,0,0.75);
     /* border-left: 4px solid var(--blue2); */
+    padding: 10px 5px;
 }
 
 h5{
