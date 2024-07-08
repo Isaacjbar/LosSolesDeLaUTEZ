@@ -2,27 +2,6 @@
 body {
   padding-top: 60px;
 }
-
-:root {
-  --color-text-dark: #1c1a42;
-  --color-brand-dark: #2b298a;
-  --color-brand-standard: #5a4cdb;
-  --color-brand-light: #7a6ee5;
-  --color-brand-background: #d7d3fc;
-  --color-accent-1-dark: #9f3bd4;
-  --color-accent-1-standard: #a74ad9;
-  --color-accent-1-light: #c874d9;
-  --color-accent-1-background: #f8cdf6;
-  --color-accent-2-dark: #2574de;
-  --color-accent-2-standard: #468be8;
-  --color-accent-2-light: #64a5f5;
-  --color-accent-2-background: #cde1f8;
-  --color-background-off-white: #fbfbfc;
-  --color-social-messenger: #0086ff;
-  --color-social-facebook: #1977f2;
-  --color-social-twitter: #1da1f2;
-  --color-social-linkedin: #0077b5;
-}
 /* Variables */
 :root {
   --blue1: #002b55;
@@ -47,6 +26,7 @@ body {
     #005f8d,
     #174c82
   ); 
+  --background-image-2: linear-gradient(to right top, #0a6a91, #006f91, #007391, #007890, #0a7c8e);
 }
 /* Estilos de componentes reutilzables */
 #navbar1 {
@@ -145,12 +125,44 @@ hr {
   border: none;
   color: white;
   transition: all 300ms;
+  margin: 0 auto;
+}
+.btn-positive a {
+  text-decoration: none;
+  color: white;
 }
 
 .btn-positive:hover {
   background-image: var(--background-image-1);
   color: white;
   transform: scale(1.05);
+}
+
+.btn-secundary{
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  transition: all 300ms;
+  font-weight: 500;
+}
+.btn-secundary:hover{
+    transform: scale(1.06);
+    background-color: #078d73;
+}
+.btn-secundary-danger{
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  transition: all 300ms;
+  font-weight: 500;
+}
+.btn-secundary-danger:hover{
+    transform: scale(1.06);
+    background-color: #DC3545;
 }
 
 /* Buscador */
@@ -217,4 +229,25 @@ hr {
   background-color: var(--blue3);
   color: white;
   font-weight: bold;
+}
+
+.close-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  color: white;
+  transition: all 300ms;
+  z-index: 15;
+  margin-top: 8px;
+}
+.close-btn svg{
+  z-index: 9;
+}
+.close-btn:hover{
+  transform: scale(1.1);
+  color: rgb(144, 11, 11);
 }

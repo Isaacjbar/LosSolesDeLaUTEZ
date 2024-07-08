@@ -9,7 +9,7 @@
     <link rel="icon" href="img/Logo1.png">
     <title>Gestionar Historias</title>
 </head>
-<body>
+<body id="body">
   <!-- Navbar -->
   <nav id="navbar1" class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container d-flex align-items-center">
@@ -39,39 +39,6 @@
 
 <h1 class="title-1 fs-3">Gestión de Historias</h1>
 
-<div class="container mostRecent flex-column d-flex justify-content-center align-items-center">
-  <div class="mostRecent__card card shadow-sm d-flex flex-row">
-    <div class="card-body">
-      <h5 class="card_title card__title--modified">Título Historia</h5>
-    <p class="card-text">Esta es una historia interactiva que trata de x cosa y mediante la toma de decisiones puede cambiar su curso. Debes estar atento para tomar la mejor decisión posible y llegar al final correcto.</p>
-    <div class="d-flex justify-content-between  
-    flex-column
-    flex-xl-row
-    align-items-xl-center
-    justify-content-xl-around
-    my-xl-2
-    ">
-      <div class="btn-group my-xl-2">
-        <button type="button" class="btn btn-sm btn-outline-secondary btn-editar">Editar</button>
-        <button type="button" class="btn btn-sm btn-outline-secondary btn-publicar">Publicar</button>
-      </div>
-      <small class="text-body-secondary"><span class="ultima-mod">Últm. mod:</span> 12/8/24</small>
-    </div>
-  </div>
-  <img class="m-auto bd-placeholder-img card-img-top img_d_card h-2" src="img/1.png" alt="1">
-</div>
-
-  <button id="createHistoryButton" class="btn btn-success btn-positive">
-    Crear nueva historia
-  </button>
-
-</div>
-
-
-<hr class="my-4">
-
-<h4 class="title-2 mt-5" >Historias creadas</h4>
-
 <div class="searchBar1 container w-50">
   <form class="d-flex flex-md-row align-items-center  justify-content-between searchBar1__form" role="search">
     <input class="searchBar1-input form-control me-2 " type="search" placeholder="Búsque una historia por titulo"
@@ -83,6 +50,19 @@
     </svg></button>
   </form>
 </div>
+
+<div class="container d-flex justify-content-center">
+  <button id="createHistoryButton" class="btn btn-success btn-positive">
+    <a href="">Crear nueva historia</a>
+  </button>
+</div>
+
+
+<hr class="my-4">
+
+<h4 class="title-2 mt-5" >Historias creadas</h4>
+
+
 
   <main> 
     <div class="album py-3 bg-body-tertiary">
@@ -99,7 +79,7 @@
                 <p class="card-text">Esta es una historia interactiva que trata de x cosa y mediante la toma de decisiones puede cambiar su curso. Debes estar atento para tomar la mejor decisión posible y llegar al final correcto.</p>
                 <div class="d-flex justify-content-between flex-column text-center flex-lg-row align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary btn-editar">Editar</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary btn-copiar">Copiar enlace</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary btn-publicar">Publicar</button>
                   </div>
                   <small class="text-body-secondary"><span class="ultima-mod">Últm. mod:</span> 12/8/24</small>
@@ -115,7 +95,7 @@
                 <p class="card-text">Esta es una historia interactiva que trata de x cosa y mediante la toma de decisiones puede cambiar su curso. Debes estar atento para tomar la mejor decisión posible y llegar al final correcto.</p>
                 <div class="d-flex justify-content-between flex-column text-center flex-lg-row align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary btn-editar">Editar</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary btn-copiar">Copiar enlace</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary btn-publicar">Publicar</button>
                   </div>
                   <small class="text-body-secondary"><span class="ultima-mod" class="ultima-mod">Últm. mod:</span> 12/8/24</small>
@@ -131,7 +111,7 @@
                 <p class="card-text">Esta es una historia interactiva que trata de x cosa y mediante la toma de decisiones puede cambiar su curso. Debes estar atento para tomar la mejor decisión posible y llegar al final correcto.</p>
                 <div class="d-flex justify-content-between flex-column text-center flex-lg-row align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary btn-editar">Editar</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary btn-copiar">Copiar enlace</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary btn-publicar">Publicar</button>
                   </div>
                   <small class="text-body-secondary"><span class="ultima-mod">Últm. mod:</span> 12/8/24</small>
@@ -148,7 +128,7 @@
                 <p class="card-text">Esta es una historia interactiva que trata de x cosa y mediante la toma de decisiones puede cambiar su curso. Debes estar atento para tomar la mejor decisión posible y llegar al final correcto.</p>
                 <div class="d-flex justify-content-between flex-column text-center flex-lg-row align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary btn-editar">Editar</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary btn-copiar">Copiar enlace</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary btn-publicar">Publicar</button>
                   </div>
                   <small class="text-body-secondary"><span class="ultima-mod">Últm. mod:</span> 12/8/24</small>
@@ -164,7 +144,7 @@
                 <p class="card-text">Esta es una historia interactiva que trata de x cosa y mediante la toma de decisiones puede cambiar su curso. Debes estar atento para tomar la mejor decisión posible y llegar al final correcto.</p>
                 <div class="d-flex justify-content-between flex-column text-center flex-lg-row align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary btn-editar">Editar</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary btn-copiar">Copiar enlace</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary btn-publicar">Publicar</button>
                   </div>
                   <small class="text-body-secondary"><span class="ultima-mod">Últm. mod:</span> 12/8/24</small>
@@ -180,7 +160,7 @@
                 <p class="card-text">Esta es una historia interactiva que trata de x cosa y mediante la toma de decisiones puede cambiar su curso. Debes estar atento para tomar la mejor decisión posible y llegar al final correcto.</p>
                 <div class="d-flex justify-content-between flex-column text-center flex-lg-row align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary btn-editar">Editar</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary btn-copiar">Copiar enlace</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary btn-publicar">Publicar</button>
                   </div>
                   <small class="text-body-secondary"><span class="ultima-mod">Últm. mod:</span> 12/8/24</small>
@@ -197,7 +177,7 @@
                 <p class="card-text">Esta es una historia interactiva que trata de x cosa y mediante la toma de decisiones puede cambiar su curso. Debes estar atento para tomar la mejor decisión posible y llegar al final correcto.</p>
                 <div class="d-flex justify-content-between flex-column text-center flex-lg-row align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary btn-editar">Editar</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary btn-copiar">Copiar enlace</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary btn-publicar">Publicar</button>
                   </div>
                   <small class="text-body-secondary"><span class="ultima-mod">Últm. mod:</span> 12/8/24</small>
@@ -213,7 +193,7 @@
                 <p class="card-text">Esta es una historia interactiva que trata de x cosa y mediante la toma de decisiones puede cambiar su curso. Debes estar atento para tomar la mejor decisión posible y llegar al final correcto.</p>
                 <div class="d-flex justify-content-between flex-column text-center flex-lg-row align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary btn-editar">Editar</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary btn-copiar">Copiar enlace</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary btn-publicar">Publicar</button>
                   </div>
                   <small class="text-body-secondary"><span class="ultima-mod">Últm. mod:</span> 12/8/24</small>
@@ -229,7 +209,7 @@
                 <p class="card-text">Esta es una historia interactiva que trata de x cosa y mediante la toma de decisiones puede cambiar su curso. Debes estar atento para tomar la mejor decisión posible y llegar al final correcto.</p>
                 <div class="d-flex justify-content-between flex-column text-center flex-lg-row align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary btn-editar">Editar</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary btn-copiar">Copiar enlace</button>
                     <button type="button" class="btn btn-sm btn-outline-secondary btn-publicar">Publicar</button>
                   </div>
                   <small class="text-body-secondary"><span class="ultima-mod">Últm. mod:</span> 12/8/24</small>
@@ -248,5 +228,19 @@
     </footer>
 
       <script src="bootstrap-5.2.3-dist/js/bootstrap.js"> </script>
+      <script src="js/index.js"></script>
+
+    <!-- <div class="copy-link-container">
+      <div class="copy_link_modal">
+        <button onclick="closeCopyLinkModal()" class="close-btn"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+        </svg></button> 
+        <h5 class="copy_link_modal__text">Copia el enlace de la historia</h5>
+        <input disabled type="text" value="http://histority.com/historias/ladecisiondepablo">
+        <button class="btn-secundary copyLinkBtn">Copiar link</button>
+      </div>
+    </div> -->
+
 </body>
 </html>
